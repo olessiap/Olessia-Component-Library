@@ -12,20 +12,19 @@ const App = () => {
       let itemNoCap = item.toLowerCase();
       if (itemNoCap === 'a' || itemNoCap === 'an' || itemNoCap === 'the') {
         return (
-          <>
-            <button>{item}</button>
-          </>
+          <div key={index}>
+            <MultipleChoice correctValue={item} />
+          </div>
         )
       } else {
         return (
-          <p>&nbsp;{item}&nbsp;</p>
+          <p key={index}>&nbsp;{item}&nbsp;</p>
         )
       }
     })
     return result;
   }
 
-  console.log('filteredText() ', filteredText());
   return (
     <div className="App">
       <textarea value={importedText} onChange={(e) => setImportedText(e.target.value)}></textarea>
