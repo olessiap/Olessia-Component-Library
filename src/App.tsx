@@ -1,13 +1,11 @@
 import './App.scss';
-import React, { useState, useEffect } from 'react';
-import DefiniteIndefinite from './components/definiteIndefinite/definiteIndefinite';
-import { COMPONENTNAME } from './components/COMPONENT_NAME/COMPONENT_NAME';
+import { ComponentList } from './components/component-list/ComponentList';
+
 
 const App = () => {
   return (
     <div>
-      <DefiniteIndefinite />
-      {/* <COMPONENTNAME /> */}
+      <ComponentList />
     </div>
   );
 }

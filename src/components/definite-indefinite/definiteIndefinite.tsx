@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { MultipleChoice } from './MultipleChoice';
 import './definiteIndefinite.scss';
 
-const DefiniteIndefinite = () => {
+export const DefiniteIndefinite = () => {
     const [importedText, setImportedText] = useState('On my way out of the bathroom, I pause. Partly, this is because I’m still working on my game plan. Mostly, though, it’s because the floor is so sticky that I lose my sandal and have to hobble back for it. I love everything about this place in theory, but in practice, I think letting my bare foot touch the anonymous filth on the laminate might be a good way to contract one of those rare diseases kept in the refrigerated vials of a secret CDC facility');
 
     const filteredText = () => {
@@ -34,5 +34,3 @@ const DefiniteIndefinite = () => {
         </div>
     );
 }
-
-export default DefiniteIndefinite;

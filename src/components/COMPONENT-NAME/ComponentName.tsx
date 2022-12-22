@@ -1,9 +1,9 @@
-import './index.scss';
+// import './.scss';
 
 export const COMPONENTNAME = () => {
     return (
         <div>
-            hello
+
         </div>
     );
 }
