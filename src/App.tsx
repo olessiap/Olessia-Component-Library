@@ -1,12 +1,11 @@
-import './App.css';
+import './App.scss';
 import React, { useState, useEffect } from 'react';
-import { MultipleChoice } from './components/definiteIndefinite/MultipleChoice'
-import DefiniteIndefinite from './components/definiteIndefinite';
-import { COMPONENTNAME } from './components/COMPONENT_NAME';
+import DefiniteIndefinite from './components/definiteIndefinite/definiteIndefinite';
+import { COMPONENTNAME } from './components/COMPONENT_NAME/COMPONENT_NAME';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <DefiniteIndefinite />
       {/* <COMPONENTNAME /> */}
     </div>
@@ -14,3 +13,7 @@ const App = () => {
 }
 
 export default App;
+
+// TODO 
+// create clickable cards for each component using composition? 
+// onClick re-route to new route and component UI

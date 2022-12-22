@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MultipleChoice } from './MultipleChoice';
-import './index.css';
+import './definiteIndefinite.scss';
 
 const DefiniteIndefinite = () => {
     const [importedText, setImportedText] = useState('On my way out of the bathroom, I pause. Partly, this is because I’m still working on my game plan. Mostly, though, it’s because the floor is so sticky that I lose my sandal and have to hobble back for it. I love everything about this place in theory, but in practice, I think letting my bare foot touch the anonymous filth on the laminate might be a good way to contract one of those rare diseases kept in the refrigerated vials of a secret CDC facility');
@@ -26,9 +26,9 @@ const DefiniteIndefinite = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container-di">
             <textarea value={importedText} onChange={(e) => setImportedText(e.target.value)}></textarea>
-            <div className="wrapper">
+            <div className="wrapper-di">
                 {filteredText()}
             </div>
         </div>

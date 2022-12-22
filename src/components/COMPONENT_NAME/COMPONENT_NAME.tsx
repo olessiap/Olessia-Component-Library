@@ -1,8 +1,8 @@
-import './index.css';
+import './index.scss';
 
 export const COMPONENTNAME = () => {
     return (
-        <div className="container">
+        <div>
             hello
         </div>
     );
