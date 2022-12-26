@@ -1,5 +1,6 @@
 import { DefiniteIndefinite } from '../definite-indefinite/definiteIndefinite';
 import { ProgressBar } from '../progress-bar/ProgressBar';
+import { ComponentItem } from './ComponentItem';
 import './componentList.scss';
 
 export const ComponentList = () => {
@@ -8,7 +9,7 @@ export const ComponentList = () => {
         {
             name: "Definite Indefinite Grammar Practice",
             description: "This is a multiple choice grammar quiz that tests the user's knowledge of articles",
-            image: "",
+            image: "./images/definite-indefinite.jpg",
             component: <DefiniteIndefinite />
         },
         {
@@ -24,9 +25,7 @@ export const ComponentList = () => {
             <ProgressBar /> */}
             {components.map((item) => {
                 return (
-                    <div>
-                        <h1>{item.name}</h1>
-                    </div>
+                    <ComponentItem item={item} />
                 )
             })}
         </div>
