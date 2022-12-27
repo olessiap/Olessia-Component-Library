@@ -7,7 +7,7 @@ export const ComponentItem = (props: Props) => {
     return (
         <ComponentCard>
             <>
-                <img src={props.item.image} height='200px' width="300px" />
+                <img src={require(`${props.item.image}`)} height='200px' width="300px" />
                 <h1>{props.item.name}</h1>
                 <p>hellloooooo</p>
             </>

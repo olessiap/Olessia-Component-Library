@@ -15,7 +15,7 @@ export const ComponentList = () => {
         {
             name: "Progress Bar",
             description: "A custom progress bar that displayes completed percentage number",
-            image: "",
+            image: "./images/cat.jpeg",
             component: <ProgressBar />
         }
     ]
