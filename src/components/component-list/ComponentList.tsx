@@ -17,15 +17,18 @@ export const ComponentList = () => {
             description: "A custom progress bar that displays a completed percentage number",
             image: "./images/cat.jpeg",
             component: <ProgressBar />
-        }
+        },
     ]
     return (
-        <div>
-            {components.map((item) => {
-                return (
-                    <ComponentItem item={item} />
-                )
-            })}
-        </div>
+        <>
+            <h1 className="heading">Olessia's Component Library List</h1>
+            <div className="card-container">
+                {components.map((item) => {
+                    return (
+                        <ComponentItem item={item} />
+                    )
+                })}
+            </div>
+        </>
     );
 }

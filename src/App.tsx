@@ -4,7 +4,7 @@ import { ComponentList } from './components/component-list/ComponentList';
 
 const App = () => {
   return (
-    <div style={{ backgroundColor: 'grey', padding: '20px' }}>
+    <div>
       <ComponentList />
     </div>
   );
