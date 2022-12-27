@@ -14,6 +14,7 @@ export const ComponentItem = (props: ComponentItemProps) => {
                 </div>
                 <h4 className="card-title">{props.item.name}</h4>
                 <p className="card-description">{props.item.description}</p>
+                <button className="demo-button">DEMO</button>
             </>
         </ComponentCard>
     )
