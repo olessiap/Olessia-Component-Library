@@ -14,15 +14,13 @@ export const ComponentList = () => {
         },
         {
             name: "Progress Bar",
-            description: "A custom progress bar that displayes completed percentage number",
+            description: "A custom progress bar that displays a completed percentage number",
             image: "./images/cat.jpeg",
             component: <ProgressBar />
         }
     ]
     return (
         <div>
-            {/* <DefiniteIndefinite />
-            <ProgressBar /> */}
             {components.map((item) => {
                 return (
                     <ComponentItem item={item} />

@@ -1,28 +1,33 @@
 import React from 'react';
-type Props = {
+import './componentList.scss'
+
+type ComponentItemProps = {
     item: any;
 }
 
-export const ComponentItem = (props: Props) => {
+export const ComponentItem = (props: ComponentItemProps) => {
     return (
         <ComponentCard>
             <>
-                <img src={require(`${props.item.image}`)} height='200px' width="300px" />
-                <h1>{props.item.name}</h1>
-                <p>hellloooooo</p>
+                <div className="img-wrapper">
+                    <img src={require(`${props.item.image}`)} className="card-image" alt={`${props.item.name} demo`} />
+                </div>
+                <h4 className="card-title">{props.item.name}</h4>
+                <p className="card-description">{props.item.description}</p>
             </>
         </ComponentCard>
     )
 }
 
-type Props2 = {
-    children: any;
-}
 
-const ComponentCard = (props: Props2) => {
+const ComponentCard = (props: ComponentCardProps) => {
     return (
-        <div style={{ backgroundColor: 'pink' }}>
+        <div className="card">
             {props.children}
         </div>
     )
+}
+
+type ComponentCardProps = {
+    children: any;
 }
