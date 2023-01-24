@@ -1,8 +1,8 @@
-import React from 'react';
 import './componentList.scss'
 
 type ComponentItemProps = {
     item: any;
+    updateFn: () => void;
 }
 
 export const ComponentItem = (props: ComponentItemProps) => {
@@ -14,7 +14,7 @@ export const ComponentItem = (props: ComponentItemProps) => {
                 </div>
                 <h4 className="card-title">{props.item.name}</h4>
                 <p className="card-description">{props.item.description}</p>
-                <button className="demo-button">DEMO</button>
+                <button className="demo-button" onClick={() => props.updateFn()}>DEMO</button>
             </>
         </ComponentCard>
     )
