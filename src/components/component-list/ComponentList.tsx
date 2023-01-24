@@ -10,15 +10,17 @@ export const ComponentList = (props: Props) => {
         <>
             {activeComponent ? (
                 <>
-                    <button
-                        onClick={() => {
-                            setActiveComponent(null)
-                            setActiveComponentTitle(null)
-                        }}
-                    >
-                        back
-                    </button>
-                    <ComponentTitle title={activeComponentTitle} />
+                    <div className="flex-container">
+                        <button
+                            onClick={() => {
+                                setActiveComponent(null)
+                                setActiveComponentTitle(null)
+                            }}
+                        >
+                            back
+                        </button>
+                        <ComponentTitle title={activeComponentTitle} />
+                    </div>
                     {activeComponent}
                 </>
             ) : (
@@ -39,7 +41,8 @@ export const ComponentList = (props: Props) => {
                         })}
                     </div>
                 </>
-            )}
+            )
+            }
         </>
     );
 }
