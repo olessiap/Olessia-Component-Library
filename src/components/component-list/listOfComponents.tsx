@@ -1,5 +1,5 @@
 import { DefiniteIndefinite } from "../definite-indefinite/definiteIndefinite";
-import { ProgressBar } from "../progress-bar/ProgressBar";
+import { ProgressBarParent } from "../progress-bar/ProgressBar";
 
 export const listOfCompontents = [
   {
@@ -12,6 +12,6 @@ export const listOfCompontents = [
     name: "Progress Bar",
     description: "A custom progress bar that displays a completed percentage number",
     image: "./images/cat.jpeg",
-    component: <ProgressBar />
+    component: <ProgressBarParent />
   },
 ]
