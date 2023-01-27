@@ -2,7 +2,7 @@ import './progressBar.scss';
 
 export const ProgressBarParent = () => {
     return (
-        <>
+        <div className="wrapper">
             <ProgressBar value={0} />
             <ProgressBar value={25} />
             <ProgressBar value={50} />
@@ -11,7 +11,7 @@ export const ProgressBarParent = () => {
             <ProgressBar value={2} />
             <ProgressBar value={-10} />
             <ProgressBar value={120} />
-        </>
+        </div>
     );
 }
 
