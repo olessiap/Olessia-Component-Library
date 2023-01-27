@@ -16,16 +16,18 @@ export const ProgressBarParent = () => {
     );
 }
 
+const MAX = 100;
+const MIN = 0;
 
 const ProgressBar = (props: Props) => {
+    // handle invalid values and convert them to be within [0, 100] range
+    const clampedValue = Math.min(Math.max(props.value, MIN), MAX);
 
     return (
         <div className="progress">
-            {props.value <= 100 && (
-                <div className="progress-bar" style={{ width: `${props.value}%` }}>
-                    <p>{props.value}%</p>
-                </div>
-            )}
+            <div className="progress-bar" style={{ width: `${clampedValue}%` }}>
+                <p>{props.value}%</p>
+            </div>
         </div>
     )
 }
