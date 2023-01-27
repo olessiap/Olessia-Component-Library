@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import './progressBar.scss';
 
 export const ProgressBarParent = () => {
@@ -25,8 +24,14 @@ const ProgressBar = (props: Props) => {
 
     return (
         <div className="progress">
-            <div className="progress-bar" style={{ width: `${clampedValue}%` }}>
-                <p>{props.value}%</p>
+            <div
+                className="progress-bar"
+                style={{ width: `${clampedValue}%` }}
+                role="progressbar"
+                aria-valuenow={clampedValue}
+                aria-valuemin={MIN}
+                aria-valuemax={MAX}>
+                {clampedValue}%
             </div>
         </div>
     )
