@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { ProgressBarDynamic } from '../progress-bar/ProgressBarDynamic';
-import './progressBars.scss';
+import { ProgressBarDynamic } from './ProgressBarDynamic';
 
-export const ProgressBars = () => {
+export const ProgressBarsParent = () => {
     const [result, setResult] = useState(0);
 
     return (
@@ -10,8 +9,8 @@ export const ProgressBars = () => {
             <button onClick={() => setResult(result + 1)}>
                 Add
             </button>
-            <div>
-                {Array(result).fill(null).map((item, index) => {
+            <div className="wrapper">
+                {Array(result).fill(null).map((_, index) => {
                     return (
                         <div key={index}>
                             <ProgressBarDynamic />

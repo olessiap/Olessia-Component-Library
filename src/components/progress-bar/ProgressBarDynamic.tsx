@@ -9,19 +9,13 @@ export const ProgressBarDynamic = () => {
         }
 
         setStartTransition(true);
-    });
+    }, []);
 
-    const test = [
-        'bar-contents',
-        startTransition && 'bar-contents-filled',
-    ].filter(Boolean).join(' ')
-
-    console.log('test ', test);
     return (
         <div className="bar">
             <div className={[
                 'bar-contents',
-                startTransition && 'bar-contents-filled',
+                startTransition && 'bar-contents--filled',
             ]
                 .filter(Boolean)
                 .join(' ')}

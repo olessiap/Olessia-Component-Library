@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     gap:12px;
+    margin-top: 12px;
 }
 
 .progress {
@@ -23,8 +24,21 @@
 }
 
 //dynamic styles
-
 .bar{
     height: 10px;
     background-color: gray;
+}
+
+.bar-contents {
+    background-color: green;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition-duration: 20000ms;
+    transition-property: transform;
+    transition-timing-function: linear;
+}
+
+.bar-contents--filled {
+    transform: scaleX(1);
 }
