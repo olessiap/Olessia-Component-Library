@@ -1,3 +1,4 @@
+//static styles
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -19,4 +20,11 @@
     text-align: center;
     color: white;
     overflow: hidden;
+}
+
+//dynamic styles
+
+.bar{
+    height: 10px;
+    background-color: gray;
 }
