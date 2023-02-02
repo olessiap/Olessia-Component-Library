@@ -15,7 +15,7 @@ export const Accordion1 = () => {
     ]
 
     return (
-        <>
+        <div>
             {accordionData.map((item, index) => {
                 return (
                     <div key={index}>
@@ -23,22 +23,32 @@ export const Accordion1 = () => {
                     </div>
                 )
             })}
-        </>
+        </div>
     );
 }
 
 const AccordionContent = (props: Props) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <>
-            {props.title}{' '}
-            <span
-                aria-hidden={true}
-                onClick={() => setIsOpen(!isOpen)}
-                className={['accordion-icon', isOpen && 'accordion-icon--filed'].filter(Boolean).join(' ')}
-            ></span>
-            <div>{isOpen && props.content}</div>
-        </>
+        <div className="accordion">
+            <div className="accordion-item">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="accordion-item-title">
+                    {props.title}{' '}
+                    <span
+                        aria-hidden={true}
+
+                        className={['accordion-icon', isOpen && 'accordion-icon--filed'].filter(Boolean).join(' ')}
+                    />
+                </button>
+                <div
+                    hidden={!isOpen}
+                    className="accordion-item-contents">
+                    {props.content}
+                </div>
+            </div>
+        </div>
     )
 
 }
