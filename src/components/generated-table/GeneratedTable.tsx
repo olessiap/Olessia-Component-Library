@@ -28,7 +28,7 @@ export const GeneratedTable = () => {
                 className="table-container"
                 style={{ gridTemplateColumns: `repeat(${columns}, 40px)` }}
             >
-                {Array(numberOfCells).fill(null).map((cell, index) => {
+                {Array(numberOfCells).fill(null).map((_, index) => {
                     return (
                         <div className="cell" key={index}>{index + 1}</div>
                     )
