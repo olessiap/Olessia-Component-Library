@@ -14,9 +14,6 @@ export const GeneratedTable = () => {
         setColumns(Number(columns));
     }
 
-    console.log('rows: ', rows)
-    console.log('Boolean(rows)', Boolean(rows));
-
     return (
         <div className="main-container">
             <form onSubmit={(e) => handleSubmit(e)} className="form">
@@ -48,7 +45,7 @@ export const GeneratedTable = () => {
 
 const Table = (props: Props) => {
     return (
-        <table>
+        <table className="table-container">
             <tbody>
                 {Array.from({ length: props.rows }, () => 0).map(
                     (_, row) => (
