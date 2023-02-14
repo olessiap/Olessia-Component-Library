@@ -1,39 +1,59 @@
 import { useState } from 'react';
 import './temperatureConverter.scss';
 
-export const TemperatureConverter = () => {
-    const [celsius, setCelsius] = useState(0);
-    const [farenheight, setFarenheight] = useState(0);
+function format(number: any) {
+    // Show 4 d.p. if number has more than 4 decimal places.
+    return /\.\d{5}/.test(number)
+        ? Number(number).toFixed(4)
+        : number;
+}
 
-    function handleCelsiusChange(value: any) {
-        setCelsius(Number(value));
-        let farenheight = convertTo('farenheight', value);
-        setFarenheight(Number(farenheight));
-    }
-    function handleFarenheightChange(value: any) {
-        setFarenheight(Number(value));
-        let celsius = convertTo('celsius', value);
-        setCelsius(Number(celsius));
-    }
-    function convertTo(degreeType: string, degreeValue: number) {
-        let result;
-        if (degreeType === "farenheight") {
-            result = (degreeValue * 1.8) + 32;
-        } else if (degreeType === "celsius") {
-            result = (degreeValue - 32) * .5556;
-        }
-        return result;
+export const TemperatureConverter = () => {
+    const [celsius, setCelsius] = useState<string | number>('');
+    const [farenheight, setFarenheight] = useState<string | number>('');
+
+    // converts from C to F and from F to C, returns formated value to 4 decimal points
+    function convert(value: any, setDestination: any, calculatedValue: any) {
+        const numericValue = Number(value);
+        const isValid =
+            !Number.isNaN(numericValue) && Boolean(value);
+        setDestination(
+            isValid ? format(calculatedValue(numericValue)) : '',
+        );
     }
 
     return (
-        <div>
-            <div>
-                <input value={celsius} onChange={(e) => handleCelsiusChange(e.target.value)} />
-                <p>Celsius</p>
+        <div className="temp-container">
+            <div className="temp-wrapper">
+                <input
+                    value={celsius}
+                    onChange={(event) => {
+                        const newValue = event.target.value;
+                        setCelsius(newValue);
+                        convert(
+                            newValue,
+                            setFarenheight,
+                            (value: number) => (value * 9) / 5 + 32
+                        )
+                    }}
+                    className="temp-input" />
+                <div className="temp-label">Celsius</div>
             </div>
-            <div>
-                <input value={farenheight} onChange={(e) => handleFarenheightChange(e.target.value)} />
-                <p>Farenheight</p>
+            <div className="temp-divider">=</div>
+            <div className="temp-wrapper">
+                <input
+                    value={farenheight}
+                    onChange={(event) => {
+                        const newValue = event.target.value;
+                        setFarenheight(newValue)
+                        convert(
+                            newValue,
+                            setCelsius,
+                            (value: number) => ((value - 32) * 5) / 9,
+                        )
+                    }}
+                    className="temp-input" />
+                <div className="temp-label">Farenheight</div>
             </div>
         </div>
     );
