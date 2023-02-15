@@ -3,6 +3,7 @@ import { DefiniteIndefinite } from "../definite-indefinite/definiteIndefinite";
 import { GeneratedTable } from "../generated-table/GeneratedTable";
 import { ProgressBarParent } from "../progress-bar/ProgressBarParent";
 import { ProgressBarsParent } from "../progress-bar/ProgressBarsParent";
+import { Tabs } from "../tabs/Tabs";
 import { TemperatureConverter } from "../temperature-converter/TemperatureConverter";
 
 const accordion1Data = [
@@ -19,6 +20,12 @@ const accordion1Data = [
 ]
 
 export const listOfCompontents = [
+  {
+    name: "Tabs",
+    description: "a Tabs component that displays one panel of content at a time depending on the active tab element",
+    image: "./images/cat.jpeg",
+    component: <Tabs />
+  },
   {
     name: "Temperature Converter",
     description: "a simple temperature converter widget that contains two text inputs temperatures in Celsius and Fahrenheit respectively, allowing for conversion between the temperature scales",
