@@ -5,7 +5,7 @@ export const Tabs = (props: Props) => {
     const [active, setActive] = useState(props.defaultValue ?? props.items[0].value);
 
     return (
-        <div>
+        <div className="tab-main-container">
             <div className="tab-button-container">
                 {props.items.map((item: any) => {
                     const isActiveValue = item.value == active;
@@ -20,11 +20,13 @@ export const Tabs = (props: Props) => {
                     )
                 })}
             </div>
-            {props.items.map((item: any) => (
-                <div key={item.value} hidden={item.value !== active}>
-                    {item.content}
-                </div>
-            ))}
+            <div className="tab-content">
+                {props.items.map((item: any) => (
+                    <div key={item.value} hidden={item.value !== active}>
+                        {item.content}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
