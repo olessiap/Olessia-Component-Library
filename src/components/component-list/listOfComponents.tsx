@@ -19,12 +19,30 @@ const accordion1Data = [
   }
 ]
 
+const tabsData = [
+  {
+    value: 'html',
+    label: "HTML",
+    content: "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser."
+  },
+  {
+    value: 'css',
+    label: "CSS",
+    content: "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML."
+  },
+  {
+    value: 'javascript',
+    label: "Javascript",
+    content: "JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS."
+  }
+]
+
 export const listOfCompontents = [
   {
     name: "Tabs",
     description: "a Tabs component that displays one panel of content at a time depending on the active tab element",
     image: "./images/cat.jpeg",
-    component: <Tabs />
+    component: <Tabs items={tabsData} defaultValue={'css'} />
   },
   {
     name: "Temperature Converter",

@@ -1,4 +1,13 @@
 .tab-button-container {
     display: flex;
-    justify-content: space-between;;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.tab-button {
+    background-color: gold;
+}
+
+.tab-button-active {
+    background-color: hotpink;
 }

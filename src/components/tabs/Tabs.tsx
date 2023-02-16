@@ -1,38 +1,35 @@
 import { useState } from 'react';
 import './tabs.scss';
 
-export const Tabs = () => {
-    const [active, setActive] = useState(0);
-    const contentData = [
-        {
-            title: "HTML",
-            content: "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser."
-        },
-        {
-            title: "CSS",
-            content: "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML."
-        },
-        {
-            title: "Javascript",
-            content: "JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS."
-        }
-    ]
+export const Tabs = (props: Props) => {
+    const [active, setActive] = useState(props.defaultValue ?? props.items[0].value);
+
     return (
         <div>
             <div className="tab-button-container">
-                {contentData.map((item, index) => {
+                {props.items.map((item: any) => {
+                    const isActiveValue = item.value == active;
                     return (
-                        <div
-                            style={{ color: active === index ? 'red' : 'black' }}
-                            onClick={() => { setActive(index) }}>
-                            {item.title}
-                        </div>
+                        <button
+                            key={item.value}
+                            type="button"
+                            className={["tab-button", isActiveValue && "tab-button-active"].filter(Boolean).join(" ")}
+                            onClick={() => setActive(item.value)}>
+                            {item.label}
+                        </button>
                     )
                 })}
             </div>
-            <div>
-                {contentData[active].content}
-            </div>
+            {props.items.map((item: any) => (
+                <div key={item.value} hidden={item.value !== active}>
+                    {item.content}
+                </div>
+            ))}
         </div>
     );
+}
+
+interface Props {
+    items: any;
+    defaultValue?: string;
 }
