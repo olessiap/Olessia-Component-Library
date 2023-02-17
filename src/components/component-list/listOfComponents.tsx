@@ -1,6 +1,7 @@
 import { Accordion1 } from "../accordion1/Accordion1";
 import { DefiniteIndefinite } from "../definite-indefinite/definiteIndefinite";
 import { GeneratedTable } from "../generated-table/GeneratedTable";
+import { HolyGrailLayout } from "../holygrail-layout/HolyGrailLayout";
 import { ProgressBarParent } from "../progress-bar/ProgressBarParent";
 import { ProgressBarsParent } from "../progress-bar/ProgressBarsParent";
 import { Tabs } from "../tabs/Tabs";
@@ -38,6 +39,12 @@ const tabsData = [
 ]
 
 export const listOfCompontents = [
+  {
+    name: "Holy Grail Layout",
+    description: "It consists of a header, footer, and three columns. The left column contains navigation items, the middle column contains the page contents, and the right column contains ads.",
+    image: "./images/cat.jpeg",
+    component: <HolyGrailLayout />
+  },
   {
     name: "Tabs",
     description: "a Tabs component that displays one panel of content at a time depending on the active tab element",

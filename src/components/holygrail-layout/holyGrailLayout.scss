@@ -1,0 +1,33 @@
+body {
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'sans-serif';
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+    padding:15px;
+}
+
+header {
+    background-color: tomato;
+}
+
+nav {
+    background-color: coral;
+}
+
+main {
+    background-color: moccasin;
+}
+
+aside {
+    background-color: sandybrown;
+}
+
+footer {
+    background-color: slategray;
+}
