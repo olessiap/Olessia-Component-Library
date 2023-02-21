@@ -1,18 +1,28 @@
+.accordion-container {
+    max-width: 500px;
+    background: cadetblue;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .accordion {
     display:flex;
     flex-direction: column;
     width:100%;
+    background-color: #69a3a5;
 }
 
 .accordion-item {
     display: flex;
     flex-direction: column;
-    row-gap: 4px;
-    padding: 4px 0;
 }
 
 .accordion-item-title:hover {
-    background-color: #eee;
+    background-color: #74b4b6;
 }
 
 .accordion-item-title {

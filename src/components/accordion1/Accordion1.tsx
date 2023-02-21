@@ -16,7 +16,7 @@ export const Accordion1 = (props: Props) => {
     );
 
     return (
-        <div>
+        <div className="accordion-container">
             {props.accordionData.map((item: any, index: number) => {
                 const isExpanded = openSections.has(item.value);
                 const headerId = getAccordionHeaderId(accordionId, item.value);
