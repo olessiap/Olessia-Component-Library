@@ -2,14 +2,14 @@ import './holyGrailLayout.scss';
 
 export const HolyGrailLayout = () => {
     return (
-        <body>
+        <div className="holy-grail-body">
             <header>HEADER</header>
-            <div>
+            <div className="columns">
                 <nav>NAV</nav>
                 <main>MAIN</main>
                 <aside>SIDEBAR</aside>
             </div>
             <footer>FOOTER</footer>
-        </body>
+        </div>
     );
 }

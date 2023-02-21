@@ -1,16 +1,27 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import './accordion1.scss';
 
+function getAccordionHeaderId(accordionId: string, value: string) {
+    return accordionId + "-header-" + value;
+}
+
+function getPanelAccordionId(accordionId: string, value: string) {
+    return accordionId + '-panel-' + value;
+}
+
 export const Accordion1 = (props: Props) => {
+    const accordionId = useId();
     const [openSections, setOpenSections] = useState(
         new Set(),
     );
-    const [count, setCount] = useState();
 
     return (
         <div>
             {props.accordionData.map((item: any, index: number) => {
                 const isExpanded = openSections.has(item.value);
+                const headerId = getAccordionHeaderId(accordionId, item.value);
+                const panelId = getPanelAccordionId(accordionId, item.value);
+
                 return (
                     <div key={index} className="accordion">
                         <div className="accordion-item">
@@ -20,17 +31,21 @@ export const Accordion1 = (props: Props) => {
                                     newOpenSections.has(item.value) ? newOpenSections.delete(item.value) : newOpenSections.add(item.value);
                                     setOpenSections(newOpenSections)
                                 }}
-                                className="accordion-item-title">
+                                className="accordion-item-title"
+                                aria-expanded={isExpanded}
+                                id={headerId}
+                                aria-controls={panelId}>
                                 {item.title}{' '}
                                 <span
-                                    aria-hidden={true}
-
                                     className={['accordion-icon', isExpanded && 'accordion-icon--filed'].filter(Boolean).join(' ')}
                                 />
                             </button>
                             <div
                                 hidden={!isExpanded}
-                                className="accordion-item-contents">
+                                className="accordion-item-contents"
+                                role="region"
+                                aria-labelledby={headerId}
+                                id={panelId}>
                                 {item.content}
                             </div>
                         </div>
@@ -43,29 +58,3 @@ export const Accordion1 = (props: Props) => {
 interface Props {
     accordionData: any;
 }
-
-// const AccordionContent = (props: Props) => {
-//     const [isOpen, setIsOpen] = useState(false);
-//     return (
-//         <div className="accordion">
-//             <div className="accordion-item">
-//                 <button
-//                     onClick={() => setIsOpen(!isOpen)}
-//                     className="accordion-item-title">
-//                     {props.title}{' '}
-//                     <span
-//                         aria-hidden={true}
-
-//                         className={['accordion-icon', isOpen && 'accordion-icon--filed'].filter(Boolean).join(' ')}
-//                     />
-//                 </button>
-//                 <div
-//                     hidden={!isOpen}
-//                     className="accordion-item-contents">
-//                     {props.content}
-//                 </div>
-//             </div>
-//         </div>
-//     )
-
-// }

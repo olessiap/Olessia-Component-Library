@@ -1,8 +1,3 @@
-body {
-    font-weight: bold;
-    font-size: 12px;
-    font-family: 'sans-serif';
-}
 
 header,
 nav,
@@ -10,24 +5,44 @@ main,
 aside,
 footer {
     padding:15px;
+    text-align: center;
+}
+
+.holy-grail-body {
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background-color: tomato;
+    height:60px;
 }
 
+.columns {
+    display: flex;
+    flex-grow: 1;
+}
 nav {
     background-color: coral;
+    width: 100px;
+    flex-shrink: 0;
 }
 
 main {
     background-color: moccasin;
+    flex-grow: 1;
 }
 
 aside {
     background-color: sandybrown;
+    width: 100px;
+    flex-shrink: 0;
 }
 
 footer {
     background-color: slategray;
+    height:100px;
 }
