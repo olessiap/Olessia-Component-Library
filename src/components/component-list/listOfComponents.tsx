@@ -1,4 +1,5 @@
 import { Accordion1 } from "../accordion1/Accordion1";
+import { AnalogClock } from "../analog-clock/AnalogClock";
 import { DefiniteIndefinite } from "../definite-indefinite/definiteIndefinite";
 import { GeneratedTable } from "../generated-table/GeneratedTable";
 import { HolyGrailLayout } from "../holygrail-layout/HolyGrailLayout";
@@ -39,6 +40,12 @@ const tabsData = [
 ]
 
 export const listOfCompontents = [
+  {
+    name: "Analog Clock",
+    description: "A widget that renders the current time within an analog clock display, where the clock hands move and update like a real clock.",
+    image: "./images/cat.jpeg",
+    component: <AnalogClock />
+  },
   {
     name: "Holy Grail Layout",
     description: "It consists of a header, footer, and three columns. The left column contains navigation items, the middle column contains the page contents, and the right column contains ads.",
