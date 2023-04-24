@@ -1,0 +1,43 @@
+.clock-outer {
+    width: 200px;
+    height: 200px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    margin: 0 auto;
+    transform: rotate(180deg);
+}
+
+.clock-inner {
+    margin:0 auto;
+    position: relative;
+    margin-top: 50%;
+}
+
+.hand {
+    background-color: grey;
+    transform-origin: 0% 0%;
+    position: absolute;
+    left: 50%;
+    border-radius: 2px;
+}
+
+.hour {
+    width: 5px;
+    height:50px;
+    background: cadetblue;
+    // transform: rotate(330deg);
+}
+
+.minute {
+    width: 3px;
+    height: 70px;
+    background-color: blueviolet;
+    transform: rotate(120deg);
+}
+
+.second {
+    width: 2px;
+    height: 90px;
+    background-color: green;
+    transform: rotate(300deg);
+}
